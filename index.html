@@ -43,32 +43,25 @@
             transform: scaleX(-1);
         }
 
-        #instruction-box {
+       #instruction-box {
     position: absolute;
-    top: 50%;
+    top: 35%; /* ปรับลดลงจาก 50% เพื่อให้ขยับขึ้นบน */
     left: 50%;
-    transform: translate(-50%, -50%); /* วางกลางจอให้สมดุล */
+    transform: translate(-50%, -50%);
+    
+    /* สไตล์เดิมที่ปรับให้โมเดิร์น */
     width: 85%;
-    max-width: 500px; /* จำกัดความกว้างไม่ให้ยืดเกินไปในจอคอม */
+    max-width: 450px;
+    background: rgba(15, 15, 15, 0.85); /* เข้มขึ้นนิดนึงเพื่อให้ตัวหนังสืออ่านง่าย */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     
-    /* Effect กระจก (Glassmorphism) */
-    background: rgba(255, 255, 255, 0.05); 
-    backdrop-filter: blur(12px); 
-    -webkit-backdrop-filter: blur(12px);
-    
-    padding: 30px;
-    border-radius: 24px; /* โค้งมนมากขึ้นดูทันสมัย */
+    padding: 25px;
+    border-radius: 20px;
     text-align: center;
-    
-    /* เส้นขอบแบบบางและไล่เฉด */
-    border: 1px solid rgba(0, 185, 0, 0.3); 
-    
-    /* เงาฟุ้งๆ ให้ดูมีมิติ */
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    
+    border: 1px solid rgba(0, 185, 0, 0.4);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     z-index: 30;
-    color: #ffffff;
-    font-family: 'Inter', 'Kanit', sans-serif;
 }
 
         #step-text {
@@ -251,5 +244,6 @@
 
 
 </html>
+
 
 
