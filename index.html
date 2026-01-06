@@ -44,16 +44,32 @@
         }
 
         #instruction-box {
-            position: absolute;
-            top: 15%;
-            width: 80%;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            border: 2px solid #00b900;
-            z-index: 30;
-        }
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* วางกลางจอให้สมดุล */
+    width: 85%;
+    max-width: 500px; /* จำกัดความกว้างไม่ให้ยืดเกินไปในจอคอม */
+    
+    /* Effect กระจก (Glassmorphism) */
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    
+    padding: 30px;
+    border-radius: 24px; /* โค้งมนมากขึ้นดูทันสมัย */
+    text-align: center;
+    
+    /* เส้นขอบแบบบางและไล่เฉด */
+    border: 1px solid rgba(0, 185, 0, 0.3); 
+    
+    /* เงาฟุ้งๆ ให้ดูมีมิติ */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    
+    z-index: 30;
+    color: #ffffff;
+    font-family: 'Inter', 'Kanit', sans-serif;
+}
 
         #step-text {
             font-size: 1.5rem;
@@ -235,4 +251,5 @@
 
 
 </html>
+
 
