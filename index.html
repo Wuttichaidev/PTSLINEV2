@@ -43,33 +43,36 @@
             transform: scaleX(-1);
         }
 
-      #instruction-box {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* วางกลางจอให้สมดุล */
-    width: 85%;
-    max-width: 500px; /* จำกัดความกว้างไม่ให้ยืดเกินไปในจอคอม */
-    
-    /* Effect กระจก (Glassmorphism) */
-    background: rgba(255, 255, 255, 0.05); 
-    backdrop-filter: blur(12px); 
-    -webkit-backdrop-filter: blur(12px);
-    
-    padding: 30px;
-    border-radius: 24px; /* โค้งมนมากขึ้นดูทันสมัย */
-    text-align: center;
-    
-    /* เส้นขอบแบบบางและไล่เฉด */
-    border: 1px solid rgba(0, 185, 0, 0.3); 
-    
-    /* เงาฟุ้งๆ ให้ดูมีมิติ */
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    
-    z-index: 30;
-    color: #ffffff;
-    font-family: 'Inter', 'Kanit', sans-serif;
-}
+        #instruction-box {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* วางกลางจอให้สมดุล */
+            width: 85%;
+            max-width: 500px;
+            /* จำกัดความกว้างไม่ให้ยืดเกินไปในจอคอม */
+
+            /* Effect กระจก (Glassmorphism) */
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            padding: 30px;
+            border-radius: 24px;
+            /* โค้งมนมากขึ้นดูทันสมัย */
+            text-align: center;
+
+            /* เส้นขอบแบบบางและไล่เฉด */
+            border: 1px solid rgba(0, 185, 0, 0.3);
+
+            /* เงาฟุ้งๆ ให้ดูมีมิติ */
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+            z-index: 30;
+            color: #ffffff;
+            font-family: 'Inter', 'Kanit', sans-serif;
+        }
 
         #step-text {
             font-size: 1.5rem;
@@ -77,24 +80,11 @@
             color: #fff;
         }
 
-        #logout-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: #ff4b4b;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            z-index: 40;
-        }
+      
     </style>
 </head>
 
 <body>
-
-    <button id="logout-btn" onclick="liff.logout(); window.location.reload();">Logout</button>
-
     <div class="container">
         <video id="webcam" autoplay playsinline></video>
         <canvas id="output_canvas"></canvas>
@@ -206,7 +196,7 @@
             };
 
             try {
-                const response = await fetch('https://62526a73798c.ngrok-free.app/verify-deepface', {
+                const response = await fetch('http://localhost:9000/verify-deepface', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
@@ -249,10 +239,4 @@
     </script>
 </body>
 
-
 </html>
-
-
-
-
-
