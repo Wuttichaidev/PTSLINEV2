@@ -1,0 +1,20 @@
+name: CI/CD After Approval
+
+on:
+  # ใช้ repository_dispatch เพื่อรอรับสัญญาณจากภายนอก (Power Automate)
+  repository_dispatch:
+    types: [approval_received]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Deployment Script
+        run: |
+          echo "Approval received! Starting deployment..."
+          # ใส่คำสั่งสร้าง Build หรือ Deploy ของคุณที่นี่
+          npm install
+          npm run build
